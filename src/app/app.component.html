@@ -1,0 +1,181 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center;background-color:lightgray">
+    <h1>
+      <strong> Metric And Imperial Conversion </strong>
+    </h1>
+    <hr />
+</div>
+  
+
+<div class="container">
+    <div class="row main">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <a href="#" onclick="jQuery(this).parent().toggleClass('active'); jQuery(this).parent().parent().next().slideToggle(); return false">
+                        Length Conversion<span class="caret"></span>
+                      </a>
+                    </h3>
+                </div>
+                <div style="display: block;" class="panel-body">  							
+                  <form class="form-inline" role="form" >
+                      <div class="form-group">
+                        <label class="sr-only" for="length_value">Convert</label>
+                        <input class="form-control input-sm amount" #lengthValue
+                               placeholder="Enter value" 
+                               type="text">
+                      </div>				
+                      <div class="form-group">
+                        <label class="sr-only" for="length_metric">Convert from</label>
+                        <select class="form-control input-sm" #lengthMetric>
+                            <option *ngFor="let unit of lengthMetricUnits" value={{unit.id}}>
+                                {{unit.description}}
+                            </option>
+                        </select>  
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="length_imperial">Convert to</label>
+                        <select class="form-control input-sm" #lengthImperial>
+                            <option *ngFor="let unit of lengthImperialUnits" value={{unit.id}}>
+                                {{unit.description}}
+                            </option>
+                        </select>  
+                      </div>
+                      <div>
+                          <button type="button" class="btn btn-sm btn-primary" (click)="convertLength (lengthValue.value,lengthMetric.value,lengthImperial.value)">Convert Length</button>
+                          <p style="display: none;"><img src="img/icon_loading.png" alt="loading"><span>Converting...</span></p>
+                      </div>				
+                    </form>
+                    <div class="alert alert-info" id="conversion_result" *ngIf="lengthResult != null">
+                          <strong>Conversion Result:</strong> 
+                          {{lengthResult.value}} {{lengthResult.metricUnitName}} = {{lengthResult.convertedMetric}} {{lengthResult.imperialUnitName}}	
+                          <br/>
+                          <strong>Conversion Result:</strong> 
+                          {{lengthResult.value}} {{lengthResult.imperialUnitName}} = {{lengthResult.convertedImperial}} {{lengthResult.metricUnitName}}	
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <hr />
+
+    <div class="row main">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <a href="#" onclick="jQuery(this).parent().toggleClass('active'); jQuery(this).parent().parent().next().slideToggle(); return false">
+                        Mass Conversion<span class="caret"></span>
+                      </a>
+                    </h3>
+                </div>
+                <div style="display: block;" class="panel-body">  							
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                          <label class="sr-only" for="mass_value">Convert</label>
+                          <input class="form-control input-sm amount"  #massValue 
+                          placeholder="Enter value" 
+                          type="text">
+                   </div>				
+                        <div class="form-group">
+                          <label class="sr-only" for="mass_metric">Convert from</label>
+                          <select class="form-control input-sm" #massMetric>
+                              <option *ngFor="let unit of massMetricUnits" value={{unit.id}}>
+                                      {{unit.description}}
+                              </option>
+                          </select>  
+                        </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="mass_imperial">Convert to</label>
+                          <select class="form-control input-sm"  #massImperial >
+                              <option *ngFor="let unit of massImperialUnits" value={{unit.id}}>
+                                  {{unit.description}}
+                              </option>
+                          </select>  
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-primary" (click)="convertMass (massValue.value,massMetric.value,massImperial.value)">Convert Mass</button>
+                            <p style="display: none;"><img src="img/icon_loading.png" alt="loading"><span>Converting...</span></p>
+                        </div>				
+                      </form>
+                      <div class="alert alert-info" id="conversion_result" *ngIf="massResult != null">
+                            <strong>Conversion Result:</strong> 
+                            {{massResult.value}} {{massResult.metricUnitName}} = {{massResult.convertedImperial}} {{massResult.imperialUnitName}}	
+                            <br/>
+                            <strong>Conversion Result:</strong> 
+                            {{massResult.value}} {{massResult.imperialUnitName}} = {{massResult.convertedMetric}} {{massResult.metricUnitName}}	
+                      </div>
+                  </div>
+              </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <hr />
+
+    <div class="row main">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <a href="#" 
+                        onclick="jQuery(this).parent().toggleClass('active'); jQuery(this).parent().parent().next().slideToggle(); return false">
+                        Area Conversion<span class="caret"></span>
+                    </a>
+                  </h3>
+                </div>
+                <div style="display: block;" class="panel-body">  							
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                          <label class="sr-only" for="area_value">Convert</label>
+                          <input class="form-control input-sm amount" #areaValue 
+                                  placeholder="Enter value" 
+                                  type="text">
+                        </div>				
+                        <div class="form-group">
+                          <label class="sr-only" for="area_metric">Convert from</label>
+                          <select class="form-control input-sm" #areaMetric >
+                              <option *ngFor="let unit of areaMetricUnits" value={{unit.id}}>
+                                  {{unit.description}}
+                              </option>
+                          </select>  
+                        </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="area_imperial">Convert to</label>
+                          <select class="form-control input-sm"  #areaImperial >
+                              <option *ngFor="let unit of areaImperialUnits" value={{unit.id}}>
+                                  {{unit.description}}
+                              </option>
+                          </select>  
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-primary" (click)="convertArea (areaValue.value,areaMetric.value,areaImperial.value)">Convert Area</button>
+                            <p style="display: none;"><img src="img/icon_loading.png" alt="loading"><span>Converting...</span></p>
+                        </div>				
+                      </form>
+                      <div class="alert alert-info" id="conversion_result" *ngIf="areaResult != null">
+                            <strong>Conversion Result:</strong> 
+                            {{areaResult.value}} {{areaResult.metricUnitName}} = {{areaResult.convertedImperial}} {{areaResult.imperialUnitName}}	
+                            <br/>
+                            <strong>Conversion Result:</strong> 
+                            {{areaResult.value}} {{areaResult.imperialUnitName}} = {{areaResult.convertedMetric}} {{areaResult.metricUnitName}}	
+                      </div>
+                  </div>
+              </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+</div>
+
+
+
+

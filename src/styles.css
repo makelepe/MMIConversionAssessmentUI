@@ -1,0 +1,166 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar {
+	background: #fff;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+.main .well {
+	background: #fff;
+	text-align: center;
+}
+
+.main .panel-body .form-inline {
+	padding: 15px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #f9f9f9;
+}
+.main .panel-body .form-inline p {
+	display: inline-block;
+	color: #7d7d7d;
+	height: 16px;	
+	padding: 0;
+	margin: 0px 0 0 10px;
+	line-height: 100%;
+	
+	-moz-animation: rotate-ornament 100s linear infinite;
+	-ms-animation: rotate-ornament 100s linear infinite;
+	-o-animation: rotate-ornament 100s linear infinite;
+	-webkit-animation: rotate-ornament 100s linear infinite;
+	animation: rotate-ornament 100s linear infinite;	
+}
+.main .panel-body .form-inline p img {
+	float: left;
+	margin: 0 6px 0 0;
+	animation-name: loading;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	/* Firefox: */
+	-moz-animation-name: loading;
+	-moz-animation-duration: 1s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-play-state: running;
+	/* Safari and Chrome: */
+	-webkit-animation-name: loading;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: running;	
+}
+@keyframes loading
+{
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+ 
+@-moz-keyframes loading /* Firefox */
+{
+	from {-moz-transform:rotate(0deg);}
+	to {-moz-transform:rotate(360deg);}
+}
+ 
+@-webkit-keyframes loading /* Safari and Chrome */
+{
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+.main .panel-body {
+	padding: 0;
+}
+.main .alert {
+	border-radius: 0;
+	border-left: 0;
+	border-right: 0;
+	margin: 0;
+}
+.main .panel-heading {
+	color: #fff;
+	background-color: #333;
+}
+.main .panel-heading h4 {
+	color: #fff;
+	position: relative;
+}
+.main .panel-body h3 {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	color: #bbb;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	line-height: 100%;
+}
+.main .panel-heading h3 a {
+	color: #fff;
+	padding: 8px;	
+	display: block;
+	font-size: 18px;
+}
+.main .panel-heading h3 a:hover {
+	text-decoration: none;
+}
+.main .panel-body h3 a {
+	display: block;
+	padding: 45px;	
+	color: #fff;
+}
+.main .panel-body h3 a:hover {
+	text-decoration: none;
+}
+.main .panel-heading h3 .caret {
+	position: absolute;
+	top: 7px;
+	right: 0;
+}
+.main .panel-body h3 .caret {
+	position: absolute;
+	top: 4px;
+	right: 15px;
+}
+.main .panel-body h3 .glyphicon {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+.main .panel-body h3.active .caret, .main .panel-heading h3.active .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 0;
+	border-bottom: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+.main .row {
+	display: none;
+	margin: 0;	
+}
+.main .well, .side iframe {
+	display: none;
+}
+
+.side .panel {
+	background: #f0eff6;
+	border: 1px solid #e5e5e5;
+	color: #716B7A;	
+	text-shadow: 0 1px 0 #fff;
+}
+.side .panel h4 {
+	color: #563D7C;
+}
+.main .panel-body .row .table {
+	font-size: 85%;
+}
+
